@@ -1,0 +1,22 @@
+body {
+        background-color: #F5F5F5;
+        margin: 0 auto;
+        width: 50vw;
+        max-width: 38em;
+}
+
+p {
+        font-family: Source Serif Pro;
+        font-size: 16px;
+        line-height: 22.4px;
+}
+
+h1 {
+        font-family: Source Sans Pro;
+        font-size: 36px;
+        line-height 50.4px
+}
+
+.small_caps {
+        font-variant: small-caps;
+}
