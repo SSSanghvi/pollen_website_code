@@ -8,7 +8,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-	<a href="◊(next here)">◊(next here)</a>
+	<section>
+		<p>
+		◊when/splice[(previous here)]{
+			<button class="small-caps" onclick="window.location.href='◊(previous here)';">« previous</button>
+		}
+		◊when/splice[(next here)]{
+			<button class="nav-next small-caps" onclick="window.location.href='◊(next here)';">next »</button>
+		}
+		</p>
+	</section>
 	◊(->html doc)
 </body>
 </html>

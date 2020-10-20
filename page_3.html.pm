@@ -1,2 +1,6 @@
 #lang pollen
-◊h1{Page 3}
+◊article{
+	◊section{
+		◊h1{Page 3}
+	}
+}
