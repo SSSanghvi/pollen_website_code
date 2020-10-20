@@ -17,3 +17,11 @@
     left: 50%;
     margin-right: -50%;
 }
+
+.all-caps {
+        font-variant: small-caps;
+    /*text-transform: uppercase;*/
+    letter-spacing: 0.2em;
+    margin-top: 2em;
+    margin-bottom: 1em;
+}

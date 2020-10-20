@@ -373,10 +373,6 @@ pre.fullwidth > code {
     clear:both;
 }
 
-.small-caps {
-    font-variant: small-caps;
-}
-
 span.newthought {
     font-variant: small-caps;
     font-size: 1.2em;

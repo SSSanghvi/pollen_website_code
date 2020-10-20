@@ -2,16 +2,24 @@
 
 ◊article{
 	◊section{
-		◊h1{title}
-		◊p{
-			Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-		}
-		◊p{
-			◊span[#:class "newthought"]{In his} later books 
-			◊label[#:for "sn-in-his-later-books" #:class "margin-toggle sidenote-number"]{}
-			◊input[#:type "checkbox" #:id "sn-in-his-later-books" #:class "margin-toggle"]{}
-			◊span[#:class "sidenote"]{test}
-			, Tufte starts each section with a bit of vertical space, a non-indented paragraph, and the first few words of the sentence set in small caps.
+		◊p{This is a web book. About me.}
+		◊h3{Why is your website a book, Sahil?}
+		◊p{ 
+			I think there's something beautiful about the way books are organized. I'd rather have my website organized in the same way, with chapters instead of tabs and links. It's more fun this way.
+			I'm also a bit of a typography nerd, and seeing a beautiful book (whether it's online or physical) makes me really happy. This one is made using Pollen◊label[#:for "pollen" #:class "margin-toggle sidenote-number"]{}
+				◊input[#:type "checkbox" #:id "pollen" #:class "margin-toggle"]{}
+				◊span[#:class "sidenote"]{
+					◊a[#:href="https://docs.racket-lang.org/pollen/index.html?q=ptree"]{Pollen: The Book is a Program}
+				} 
+				and Tufte◊label[#:for "tufte" #:class "margin-toggle sidenote-number"]{}
+				◊input[#:type "checkbox" #:id "tufte" #:class "margin-toggle"]{}
+				◊span[#:class "sidenote"]{
+					◊a[#:href="https://github.com/edwardtufte/tufte-css"]{Tufte}	
+				} 
+				CSS.
+			}
+			◊p{
+				I hope you enjoy it!
+			}
 		}
 	}
-}
