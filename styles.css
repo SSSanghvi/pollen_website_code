@@ -1,65 +1,19 @@
-body {
-        background-color: #F5F5F5;
-        right: 50%;
-        margin-left: 25vw;
-        margin-right: 25vw;
-        width: 50vw;
-        /*max-width: 38em;*/
+.nav-bar {
+    width: 87.5%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 12.5%;
+    font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+    background-color: #fffff8;
+    color: #111;
+    max-width: 1400px;
 }
 
-p, em {
-        font-family: Source Serif Pro;
-        font-size: 18px;
-        line-height: 25.2px;
+.nav-next {
+    float: right;
 }
 
-em {
-
-}
-
-h1 {
-        font-family: Source Sans Pro;
-        font-size: 36px;
-        line-height 50.4px
-}
-
-h3 {
-        font-family: Source Serif Pro Semibold;
-        font-size: 20px;
-        line-height: 28.0px;
-        margin-top: 28.0px;
-        margin-bottom: 4.0px;
-}
-
-.small_caps {
-        font-variant: small-caps;
-}
-
-.nav_top {
-        top: 1vw;
-}
-
-.nav_bottom {
-        bottom: 1vw;
-}
-
-#prev, #next {
-        font-size: 18px;
-        position: fixed;
-        font-variant: small-caps;
-        text-decoration: none;
-        color: gray;
-}
-
-#prev:hover, #next:hover {
-        color: black;
-        font-weight: bold;
-}
-
-#prev {
-        left: 25vw;
-}
-
-#next {
-        right: 25vw;
+.nav-up {
+    left: 50%;
+    margin-right: -50%;
 }

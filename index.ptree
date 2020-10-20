@@ -1,5 +1,8 @@
 #lang pollen
 
-wip.html
-page_2.html
+index.html
+◊intro_chapter.html{
+	foreword.html
+	who-sahil.html	
+}
 page_3.html
