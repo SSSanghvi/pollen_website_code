@@ -1,14 +1,20 @@
 body {
         background-color: #F5F5F5;
-        margin: 0 auto;
+        right: 50%;
+        margin-left: 25vw;
+        margin-right: 25vw;
         width: 50vw;
-        max-width: 38em;
+        /*max-width: 38em;*/
 }
 
-p {
+p, em {
         font-family: Source Serif Pro;
-        font-size: 16px;
-        line-height: 22.4px;
+        font-size: 18px;
+        line-height: 25.2px;
+}
+
+em {
+
 }
 
 h1 {
@@ -17,6 +23,43 @@ h1 {
         line-height 50.4px
 }
 
+h3 {
+        font-family: Source Serif Pro Semibold;
+        font-size: 20px;
+        line-height: 28.0px;
+        margin-top: 28.0px;
+        margin-bottom: 4.0px;
+}
+
 .small_caps {
         font-variant: small-caps;
+}
+
+.nav_top {
+        top: 1vw;
+}
+
+.nav_bottom {
+        bottom: 1vw;
+}
+
+#prev, #next {
+        font-size: 18px;
+        position: fixed;
+        font-variant: small-caps;
+        text-decoration: none;
+        color: gray;
+}
+
+#prev:hover, #next:hover {
+        color: black;
+        font-weight: bold;
+}
+
+#prev {
+        left: 25vw;
+}
+
+#next {
+        right: 25vw;
 }
