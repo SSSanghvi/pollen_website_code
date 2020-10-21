@@ -45,7 +45,7 @@
 	}
 	◊section{
 		◊p{
-			I really like learning - especially about topics in statistics and computer science. The intersection of those two fields conveniently became a major during my third semester at Cal, and thus I declared Data Science.
+			I really like learning - especially about topics in statistics and computer science. The intersection of those two fields conveniently became a major during my third semester at Cal, and thus I declared ◊a[#:href "https://data.berkeley.edu/academics/undergraduate-programs/data-science-major"]{Data Science}.
 		}
 		◊p{
 			One day I'd like to be using my skills in the pursuit of science for public good, maybe researching topics such as climate change, space exploration, or renewable energy. I strongly believe in the pursuit of scientific discovery, for the benefit of society rather than personal gain. It seems to me that perhaps now more than ever, the danger of misinformation — especially scientific misinformation — is becoming clear and present, and I am dedicated to play my part in alleviating this issue. 

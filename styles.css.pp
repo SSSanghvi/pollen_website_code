@@ -35,6 +35,10 @@
 	margin-bottom: 1em;
 }
 
+.small-caps {
+	font-variant: small-caps;
+}
+
 a {
 	text-decoration: none;
 	color: navy

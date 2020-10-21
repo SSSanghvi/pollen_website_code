@@ -1,20 +1,103 @@
 #lang pollen
-
-◊(define body-font "Source Serif Pro")
-◊(define body-font-size 18)
-
-◊(define width-vw 50)
-◊(define max-width 38)
-◊(define edge-vw 25)
-
-◊(define header-font "Source Serif Pro Semibold")
-◊(define header-font-size 20)
-
-◊(define title-font "Source Sans Pro")
-◊(define title-font-size 36)
-
-
 @charset "UTF-8";
+
+@font-face{
+    font-family: 'Source Serif Pro';
+    font-weight: 200;
+    font-style: normal;
+    font-stretch: normal;
+    src: url('./rsc/source_serif_pro/TTF/SourceSerifPro-ExtraLight.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: 'Source Serif Pro';
+    font-weight: 200;
+    font-style: italic;
+    font-stretch: normal;
+    src: url('./rsc/source_serif_pro/TTF/SourceSerifPro-ExtraLightIt.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: 'Source Serif Pro';
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    src: url('./rsc/source_serif_pro/TTF/SourceSerifPro-Light.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: 'Source Serif Pro';
+    font-weight: 300;
+    font-style: italic;
+    font-stretch: normal;
+    src: url('./rsc/source_serif_pro/TTF/SourceSerifPro-LightIt.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: 'Source Serif Pro';
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    src: url('./rsc/source_serif_pro/TTF/SourceSerifPro-Regular.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: 'Source Serif Pro';
+    font-weight: 400;
+    font-style: italic;
+    font-stretch: normal;
+    src: url('./rsc/source_serif_pro/TTF/SourceSerifPro-It.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: 'Source Serif Pro';
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    src: url('./rsc/source_serif_pro/TTF/SourceSerifPro-Semibold.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: 'Source Serif Pro';
+    font-weight: 600;
+    font-style: italic;
+    font-stretch: normal;
+    src: url('./rsc/source_serif_pro/TTF/SourceSerifPro-SemiboldIt.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: 'Source Serif Pro';
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: normal;
+    src: url('./rsc/source_serif_pro/TTF/SourceSerifPro-Bold.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: 'Source Serif Pro';
+    font-weight: 700;
+    font-style: italic;
+    font-stretch: normal;
+    src: url('./rsc/source_serif_pro/TTF/SourceSerifPro-BoldIt.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: 'Source Serif Pro';
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: normal;
+    src: url('./rsc/source_serif_pro/TTF/SourceSerifPro-Black.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: 'Source Serif Pro';
+    font-weight: 900;
+    font-style: italic;
+    font-stretch: normal;
+    src: url('./rsc/source_serif_pro/TTF/SourceSerifPro-BlackIt.ttf') format('truetype');
+}
+
+
 /* Import ET Book styles
    adapted from https://github.com/edwardtufte/et-book/blob/gh-pages/et-book.css */
 
@@ -64,7 +147,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding-left: 12.5%;
-    font-family: "Source Serif Pro", et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+    font-family: "Source Serif Pro";
     background-color: #F5F5F5;
     color: #111;
     max-width: 1400px;
@@ -72,8 +155,8 @@ body {
 }
 
 h1 {
-    font-family: "Source Serif Pro Semibold"
-    font-weight: 400;
+    font-family: "Source Serif Pro";
+    font-weight: 600;
     margin-top: 4rem;
     margin-bottom: 1.5rem;
     font-size: 3.2rem;
@@ -83,7 +166,7 @@ h1 {
 h2 {
     font-style: italic;
     font-weight: 400;
-    margin-top: 2.1rem;
+    margin-top: 2.7rem;
     margin-bottom: 1.4rem;
     font-size: 2.2rem;
     line-height: 1;
@@ -93,7 +176,7 @@ h3 {
     font-style: italic;
     font-weight: 400;
     font-size: 1.7rem;
-    margin-top: 2rem;
+    margin-top: 2.7rem;
     margin-bottom: 1.4rem;
     line-height: 1;
 }
@@ -178,6 +261,7 @@ blockquote {
 }
 
 blockquote p {
+    font-style: italic;   
     width: 55%;
     margin-right: 40px;
 }
