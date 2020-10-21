@@ -20,9 +20,12 @@
 	float: right;
 }
 
+.nav-prev {
+	float: left;
+}
+
 .nav-up {
-	left: 50%;
-	margin-right: -50%;
+	text-align: center;
 }
 
 .all-caps {

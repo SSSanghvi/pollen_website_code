@@ -42,11 +42,13 @@
 				◊td{Software Engineer at Microsoft (Cloud & AI)}
 			}
 		}
+	}
+	◊section{
 		◊p{
 			I really like learning - especially about topics in statistics and computer science. The intersection of those two fields conveniently became a major during my third semester at Cal, and thus I declared Data Science.
 		}
 		◊p{
-			One day I'd like to be using my skills in the pursuit of science for public good, maybe researching topics such as climate change, space exploration, or renewable energy. I strongly believe in the pursuit of scientific discovery, for the benefit of society rather than personal gain. It seems to me that, perhaps now more than ever, the danger of misinformation — especially scientific misinformation — is becoming clear and present, and I am dedicated to play my part in alleviating this issue. 
+			One day I'd like to be using my skills in the pursuit of science for public good, maybe researching topics such as climate change, space exploration, or renewable energy. I strongly believe in the pursuit of scientific discovery, for the benefit of society rather than personal gain. It seems to me that perhaps now more than ever, the danger of misinformation — especially scientific misinformation — is becoming clear and present, and I am dedicated to play my part in alleviating this issue. 
 		}
 		◊p{
 			I also believe that scientific research and discovery is something to be fiercely proud of — the curiosity and relentlessness that my personal scientific role models have displayed is something I admire and attempt to cultivate within myself every day. It is a driving force behind the decisions I make, both for my professional and personal future.

@@ -10,16 +10,17 @@
 <body>
 	◊(->html doc)
 	<section>
-		<p>
-		◊when/splice[(previous here)]{
-			<button class="small-caps" onclick="window.location.href='◊(previous here)';">« previous</button>
-		}
-		◊when/splice[(parent here)]{
-			<button class="nav-up small-caps" onclick="window.location.href='◊(parent here)';">chapter</button>
-		}
-		◊when/splice[(next here)]{
-			<button class="nav-next small-caps" onclick="window.location.href='◊(next here)';">next »</button>
-		}
+		<p class="nav-up">
+			◊(define nav-link-style "font-variant: small-caps; letter-spacing: 0.2em;") 
+			◊when/splice[(previous here)]{
+				<a class="nav-prev" style="◊|nav-link-style|" href="◊(previous here)">« previous</a>
+			}
+			◊when/splice[(parent here)]{
+				<a style="◊|nav-link-style|" href="◊(parent here)">chapter</a> &nbsp | &nbsp <a style="◊|nav-link-style|" href="index.html">home</a>
+			}
+			◊when/splice[(next here)]{
+				<a class="nav-next" style="◊|nav-link-style|" href="◊(next here)">next »</a>
+			}
 		</p>
 	</section>
 </body>
