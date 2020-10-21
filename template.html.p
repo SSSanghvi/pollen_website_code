@@ -16,8 +16,8 @@
 				<a class="nav-prev" style="◊|nav-link-style|" href="◊(previous here)">« previous</a>
 			}
 			◊when/splice[(parent here)]{
-				<a style="◊|nav-link-style|" href="◊(parent here)">chapter</a> &nbsp | &nbsp <a style="◊|nav-link-style|" href="index.html">home</a>
-			}
+				<a style="◊|nav-link-style|" href="◊(parent here)">chapter</a> &nbsp | &nbsp 
+			} <a style="◊|nav-link-style|" href="index.html">home</a>
 			◊when/splice[(next here)]{
 				<a class="nav-next" style="◊|nav-link-style|" href="◊(next here)">next »</a>
 			}

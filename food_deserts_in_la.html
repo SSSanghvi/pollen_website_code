@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Food Deserts in LA </title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0;">
+</head>
+
+<body>
+	<section class="hero is-primary">
+		<div class="hero-body">
+			<div class="container">
+				<h1 class="title">
+					Food Deserts in Los Angeles
+				</h1>
+				<h2 class="subtitle">
+					A cartographic study into income and fresh food accessibility | By Sahil Sanghvi
+				</h2>
+			</div>
+		</div>
+		
+	</section>
+	<br>
+
+	<section class="container is-widescreen writeup">
+		<p>
+			For better or for worse, there are many factors that play a part in someone's economic situation. One of the more influential ones is location - one's situation could be improved by being near many job opportunities, having access to public transit stations, living in wealthier cities with more money to spend on social benefit, etc. 
+		</p><br>
+		<p>
+			However, due to many factors that are out of the scope of this article, we tend to see income shaping where and with whom people live. This leads to pockets of low income and high income people across  any area one looks at. A side effect of this phenomenon is something called a food desert.
+		</p><br>
+		<p>
+			A food desert is a geographic area which contains a significant portion of low-income people, who may have significant difficulty in obtaining fresh and/or healthy food items like fresh produce due to a lack of supermarkets and large grocery stores in the area (1). This problem is further propagated due to the fact that a large portion of the affected population does not have access to a car, meaning they cannot drive to further supermarkets. As a result of this phenomenon, the affected often buy and consume cheap fast food or low quality and not fresh food items from nearby stores, which leads to a multitude of health issues in the food desert (1)
+		</p><br>
+	</section>
+
+	<section class="container is-widescreen writeup">
+		<div class="box">
+			<p style="font-style: italic;">
+				"Of all households in the United States, 2.3 million, or 2.2 percent, live more than a mile from a supermarket and do not have access to a vehicle. An additional 3.4 million households, or 3.2 percent of all households, live between one-half to 1 mile and do not have access to a vehicle."
+			</p>
+			<p>
+				<a href="https://www.ers.usda.gov/amber-waves/2010/march/access-to-affordable-nutritious-food-is-limited-in-food-deserts/" class="button is-small is-primary is-outlined" style="font-style: normal;">
+					Source (ers.usda.gov)
+				</a>
+			</p>
+		</div>
+		<br>
+	</section>
+
+	<section class="container is-widescreen writeup">
+		<p>
+			In this project, I am looking at food deserts in the Los Angeles County. Food deserts are a problem that we see worldwide, both in rural and urban areas.  However, the conditions for defining them are different, because people who live in rural areas will almost certainly have some form of long-range transport (usually an automobile) due to the nature of rural living. In an urban setting like Los Angeles, the United States Department of Agriculture defines a food desert as such:
+		</p>
+		<br>
+	</section>
+
+	<section class="container is-widescreen writeup">
+		<div class="box">
+			<p style="font-style: italic;">
+				"... we define food deserts as low-income tracts in which a substantial number or proportion of the population has low access to supermarkets or large grocery stores. Low-income tracts are characterized by either a poverty rate equal to or greater than 20 percent, or a median family income that is 80 percent or less of the metropolitan area’s median family income (for tracts in metropolitan areas) ... "
+			</p>
+			<p>
+				<a href="https://www.ers.usda.gov/webdocs/publications/45014/30940_err140.pdf" class="button is-small is-primary is-outlined" style="font-style: normal;">
+					Source (ers.usda.gov)
+				</a>
+			</p>
+		</div>
+		<br>
+	</section>
+
+	<section class="container is-widescreen writeup">
+		<p>
+			So, where are the low income areas in LA? As the USDA does, I will use census tracts in my maps. These are determined by the census bureau and, in theory, have roughly the same number of people in each. The map below shows the low income census tracts in LA, which I got directly from my first dataset (all datasets and sources are listed at the bottom).
+		</p>
+		<br>
+	</section>
+
+	<section class="container is-widescreen writeup">
+		<iframe width="100%" height="520" frameborder="0" src="https://sssanghvi.carto.com/builder/57642278-0f9b-45a7-a3da-6eff9fd08d3b/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+	</section>
+
+	<section class="container is-widescreen writeup">
+		<p>
+			As we can see, the downtown core as well as the northeast corner of the county have significant levels of low-income tracts. The western portion (Malibu and the Hollywood Hills) are not low income, as expected. Now that we have this data, I can plot the locations of farmer's markets - a great alternative to grocery stores in this case, providing fresh produce to areas that don't have nearby supermarkets. The farmer's markets are plotted below, with rings at every 0.25 mile (so the outermost circle of each is a 1 mile radius and 2 mile diameter). The reason I've chosen one mile is to match the distance standard that the federal government uses in its food accessibility studies - they use 1 mile as the benchmark for how far most people would walk for <span style="font-style: italic;">fresh</span> groceries. (2)
+		</p>
+		<br>
+	</section>
+
+	<section class="container is-widescreen writeup">
+		<iframe width="100%" height="520" frameborder="0" src="https://sssanghvi.carto.com/builder/67e1d7fe-ad9b-4d94-b9ea-25a66ac6d6ff/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+		<br>
+	</section>
+
+	<section class="container is-widescreen writeup">
+		<p>
+			From observing the above graph, we can see that some farmer's markets take place very close to or within clumps of low-income tracts. These are within walkable distance, but only for those who live near the outer edges of low-income clumps of tracts. However, farmer's markets are definitely not the main source of fresh and healthy food - that would be a grocery store. While I was unable to find data on the location of specific grocery stores, the US Department of Agriculture has curated a database of food accessibility scores per census tract. Using a table join, I was able to connect the tract geometries to these scores by the GEOID field. Then, I used Jenks Clustering to put the scores into 5 buckets and colored the tracts by those buckets, along with plotting the same farmer's markets and distance rings. 
+		</p>
+		<br>
+	</section>
+
+	<section class="container is-widescreen writeup">
+		<iframe width="100%" height="520" frameborder="0" src="https://sssanghvi.carto.com/builder/a9a34a0e-bbbd-4364-a5d9-cb829d7fdaed/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+		<br>
+	</section>
+
+	<section class="container is-widescreen writeup">
+		<p>
+			So, what do we see? First, if we turn off the "farmer's market" layer by un-checking it, we can look at the tracts colored by their LALOWI1 (Low Access Low Income, 1 mile) score. The pink, purple, and indigo tracts are potential causes of concern - these are tracts that have a LALOWI score of at least 0.10, meaning 10% or more of the people in that tract are both low income and lo access (at one mile). We see this most commonly in the northern part of the county, with small pockets in the southern half. With this map we can identify the zones that could be at risk of turning into food deserts, as grocery stores become harder and harder to find in cities both due to high urban land value and the large influx of dollar stores (3)(4). 
+		</p>
+		<br>
+		<p>
+			Turning on the farmer's market layer, we see only a little help from them. As expected, they would set up in areas that are not low income, so that they can sell more product. However, a key difference between farmer's markets and grocery stores is that farmer's markets are a quick set up, quick clean up operation. Opening a new grocery store can take many months, but a farmer's market can be set up in days. What needs to happen to alleviate these concerned regions is city-subsidized farmer's markets within areas at risk of turning into food deserts, while longer-term solutions (grocery stores, etc.) are implemented.
+		</p>
+
+		<br>
+	</section>
+
+	<section class="container is-widescreen writeup">
+		<br>
+		<h2 class="title"> The Process at Play </h2>
+		<div class="tile is-ancestor">
+			<div class="tile is-vertical is-8">
+				<div class="tile">
+					<div class="tile is-parent is-vertical">
+						<article class="tile is-child box">
+							<h3 class="title is-size-5"> Dollar Stores </h3>
+							<p> ... rapidly expand into areas that they know contain large low income populations. They may stock some food, but it is almost always unhealthy and not fresh.</p>
+						</article>
+						<article class="tile is-child box">
+							<h3 class="title is-size-5"> Grocery Stores & Supermarkets</h3>
+							<p> ... are forced out of dense urban areas due to high land and rent prices, as well as a shortage of land due to the aggressive expansion of dollar stores. (3)(4)</p>
+						</article>
+					</div>
+					<div class="tile is-parent">
+						<article class="tile is-child box">
+							<h3 class="title is-size-5"> Low Income Areas </h3>
+							<p> ... have little to no sources of fresh food and are stuck with either fast food or cheap, unhealthy snacks from dollar stores. These people are more likeley to not have cars, and grocery stores far away are unreasonable to take public transit to (if that is even available and affordable).  </p>
+						</article>
+					</div>
+				</div>
+				<div class="tile is-parent">
+					<article class="tile is-child box">
+						<h3 class="title is-size-5"> Farmer's Markets</h3>
+						<p> ... are mostly held in areas that are not low income, because that's where they can make more money. When plotted with a 1 mile radius, we see the reasonable walking distance rarely intersects with the areas of concern for food deserts.</p>
+					</article>
+				</div>
+			</div>
+			<div class="tile is-parent">
+				<article class="tile is-child box">
+					<h3 class="title is-size-5"> Food Deserts</h3>
+					<p> ... are born. People are forced into eating unhelathy food that is not fresh, and as a result develo widespread health problems such as obesity, diabeties, etc. </p>
+				</article>
+			</div>
+		</div>
+		<br>
+	</section>
+
+	<section class="container is-widescreen writeup">
+		<p>
+			Finally, I leave you with the map below. It shows food deserts according to the USDA's official description - a census tract that is marked as low income, as well as low-access at 1 mile (for urban areas). This is different from above, where I was coloring tracts by a continuous measure (the proportion of the population that was LALOWI1). As we can see, some of the most dark areas above fit the technical definition and are marked in red below; however, many don't - and we can't let them sit, or soon they will.  
+		</p>
+		<br>
+	</section>
+
+
+	<section class="container is-widescreen writeup">
+		<iframe width="100%" height="520" frameborder="0" src="https://sssanghvi.carto.com/builder/f265621a-2e40-4330-a845-01532e00e6c4/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+		<br>
+	</section>
+	<br><br><br>
+
+	<section class="container is-widescreen writeup">
+		<div class="columns">
+			<div class="column">
+				<h3 class="subtitle"> Written Commentary Sources </h3>
+				<ol>
+					<li> <span style="font-style: italic;">Access to Affordable, Nutritious Food Is Limited in “Food Deserts”</span> by Michele Ver Ploeg. <a href="https://www.ers.usda.gov/amber-waves/2010/march/access-to-affordable-nutritious-food-is-limited-in-food-deserts/">Link (goes to usda.gov) </a></li>
+					<li><span style="font-style: italic;">Characteristics and Influential Factors of Food Deserts</span> by Paula Dutko, Michele Ver Ploeg, and Tracey Farrigan. <a href="https://www.ers.usda.gov/webdocs/publications/45014/30940_err140.pdf">Link (goes to usda.gov) </a></li>
+					<li><span style="font-style: italic;">As dollar stores move into cities, residents see a steep downside</span> by Rahel Siegel. <a href="https://www.washingtonpost.com/business/economy/as-dollar-stores-move-into-cities-residents-see-a-steep-downside/2019/02/15/b3676cbe-2f09-11e9-8ad3-9a5b113ecd3c_story.html">Link (goes to washingtonpost.com) </a></li>
+					<li><span style="font-style: italic;">Dollar Stores Are Targeting Struggling Urban Neighborhoods and Small Towns. One Community Is Showing How to Fight Back.</span> by Marie Donahue and Stacy Mitchell. <a href="https://ilsr.org/dollar-stores-target-cities-towns-one-fights-back/">Link (goes to islr.org) </a></li>
+				</ol>
+			</div>
+			<div class="column">
+				<h3 class="subtitle"> Data Sources </h3>
+				<ol>
+					<li><a href="https://www.census.gov/cgi-bin/geo/shapefiles/index.php"> Census Tract Shapefiles (census.gov)</a></li>
+					<li><a href="https://data.world/usda/grocery-stores"> Food Research Atlas (data.world, posted by the USDA)</a></li>
+					<li><a href="https://catalog.data.gov/dataset/farmers-markets-geographic-data">Farmer's Market Dataset (data.gov)</a></li>
+				</ol>
+			</div>
+		</section>
+
+		<footer class="footer" style="text-align: center; vertical-align: middle;">
+			This webpage was created by Sahil Sanghvi using <a href="https://bulma.io/">Bulma</a>, <a href="https://carto.com/">Carto</a>, and lots of coffee. 
+			<br/><br/>
+			<a href="http://www.sahilcreates.com">Back to Sahil's main page</a>
+		</footer>
+	</body>
+
+	<style type="text/css">
+		.writeup {
+			font-family: 'Roboto', sans-serif;
+			font-size: 20;
+			line-height: 1.5;
+		}
+		ol {
+			padding-left: 25px;
+		}
+	</style>

@@ -10,12 +10,12 @@
 			I'm also a bit of a typography nerd, and seeing a beautiful book (whether it's online or physical) makes me really happy. This one is made using Pollen◊label[#:for "pollen" #:class "margin-toggle sidenote-number"]{}
 				◊input[#:type "checkbox" #:id "pollen" #:class "margin-toggle"]{}
 				◊span[#:class "sidenote"]{
-					◊a[#:href="https://docs.racket-lang.org/pollen/index.html?q=ptree"]{Pollen Docs}
+					◊a[#:href "https://docs.racket-lang.org/pollen/index.html?q=ptree"]{Pollen Docs}
 				} 
 				and Tufte◊label[#:for "tufte" #:class "margin-toggle sidenote-number"]{}
 				◊input[#:type "checkbox" #:id "tufte" #:class "margin-toggle"]{}
 				◊span[#:class "sidenote"]{
-					◊a[#:href="https://github.com/edwardtufte/tufte-css"]{Tufte Repository}	
+					◊a[#:href "https://github.com/edwardtufte/tufte-css"]{Tufte Repository}	
 				} 
 				CSS.
 			}

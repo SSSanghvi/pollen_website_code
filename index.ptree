@@ -2,12 +2,18 @@
 
 index.html
 
-◊intro_chapter.html{
+◊chapter_intro.html{
 	foreword.html
 	who-sahil.html	
 }
 
-◊technical_chapter.html{
+◊chapter_technical.html{
 	sock.html
 	styleme.html
+	food-deserts.html
+	rsa-tool.html
+}
+
+◊chapter_creative.html{
+	everyday-typography.html
 }
