@@ -16,9 +16,18 @@
 
 		◊p[#:class "all-caps"]{technical things i've done}
 
-		◊p{ ◊ol{
+		◊p{ ◊ol[#:start "3"]{
 			◊li{
 				◊a[#:href "sock.html"]{UC Berkeley S.O.C.K}
+			}
+			◊li{
+				◊a[#:href "styleme.html"]{StyleMe}
+			}
+			◊li{
+				◊a[#:href "food-deserts.html"]{Food Deserts in L.A. County}
+			}
+			◊li{
+				◊a[#:href "rsa-tool.html"]{R.S.A. Tool}
 			}
 		}}
 	}
