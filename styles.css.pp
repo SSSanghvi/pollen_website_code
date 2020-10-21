@@ -5,10 +5,6 @@
 	src: url("rsc/Combinumerals-OGR4.ttf");
 }
 
-em {
-	font-size: 21px;
-}
-
 .nav-bar {
 	width: 87.5%;
 	margin-left: auto;

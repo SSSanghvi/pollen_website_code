@@ -1,18 +1,55 @@
 #lang pollen
 ◊article{
 	◊section{
-		◊h1{Page 2}
+		◊h1{§2: Who is Sahil Sanghvi?}
 
-		◊h3{§1.0: Section Header}
-		◊p{AbcdefghijklmnopqrstuvwxyzAbcdefghijklmnopqrstuvwxyzAbcdefghijklm}
-
+		◊figure{
+			◊label[#:for "pic" #:class "margin-toggle"]{}
+			◊input[#:type "checkbox" #:id "pic" #:class "margin-toggle"]{}
+			◊span[#:class "marginnote"]{
+				Let's see if we can get something done. 	
+			} 
+			◊img[#:src "img/who.jpg"]{}
+		}
+		◊p[#:class "all-caps"]{quick facts}
+		◊table{
+			◊tr{
+				◊td{◊em{Feature}}
+				◊td{◊em{Observation}}
+			}
+			◊tr{
+				◊td{School}
+				◊td{University of California, Berkeley}
+			}
+			◊tr{
+				◊td{Major}
+				◊td{Data Science » Concentration in Geospatial Information & Techology}
+			}
+			◊tr{
+				◊td{Minor}
+				◊td{Electrical Engineering & Computer Science}
+			}
+			◊tr{
+				◊td{Favorite Fruit}
+				◊td{Pineapple}
+			}
+			◊tr{
+				◊td{Current Position}
+				◊td{Full-Stack Developer at U.C.Berkeley Information Security Office}
+			}
+			◊tr{
+				◊td{Post Graduation}
+				◊td{Software Engineer at Microsoft (Cloud & AI)}
+			}
+		}
 		◊p{
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis orci sapien, cursus eget maximus vitae, interdum ut augue.
-			Phasellus lacinia ultricies mi ac tempor. Quisque vitae odio at erat semper condimentum ut et neque. Aliquam interdum
-			urna vitae elit facilisis elementum. Nunc pulvinar hendrerit sagittis. Pellentesque condimentum faucibus ipsum, quis
-			vulputate orci scelerisque sit amet. Donec sagittis viverra placerat. Proin luctus eu leo vitae viverra. Curabitur
-			dignissim libero vitae imperdiet vehicula. Praesent posuere orci quis tristique tristique. Ut ac purus eu mauris mattis 
-			convallis sit amet mollis metus. Aliquam eu lacus nec sapien ornare mollis quis venenatis metus.
+			I really like learning - especially about topics in statistics and computer science. The intersection of those two fields conveniently became a major during my third semester at Cal, and thus I declared Data Science.
+		}
+		◊p{
+			One day I'd like to be using my skills in the pursuit of science for public good, maybe researching topics such as climate change, space exploration, or renewable energy. I strongly believe in the pursuit of scientific discovery, for the benefit of society rather than personal gain. It seems to me that, perhaps now more than ever, the danger of misinformation — especially scientific misinformation — is becoming clear and present, and I am dedicated to play my part in alleviating this issue. 
+		}
+		◊p{
+			I also believe that scientific research and discovery is something to be fiercely proud of — the curiosity and relentlessness that my personal scientific role models have displayed is something I admire and attempt to cultivate within myself every day. It is a driving force behind the decisions I make, both for my professional and personal future.
 		}
 	}
 }
