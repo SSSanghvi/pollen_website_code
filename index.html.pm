@@ -4,6 +4,7 @@
 ◊article{
 	◊section{
 		◊h1{Sahil Sanghvi}
+		◊p[#:class "danger"]{This website is still a work in progress!}
 		◊p[#:class "all-caps"]{introduction}
 		◊p{ ◊ol{
 			◊li{
@@ -22,12 +23,6 @@
 			}
 			◊li{
 				◊a[#:href "styleme.html"]{StyleMe}
-			}
-			◊li{
-				◊a[#:href "food-deserts.html"]{Food Deserts in L.A. County}
-			}
-			◊li{
-				◊a[#:href "rsa-tool.html"]{R.S.A. Tool}
 			}
 		}}
 	}
