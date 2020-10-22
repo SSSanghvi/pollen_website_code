@@ -11,7 +11,7 @@
 		}
 
 		◊p{
-			◊a[#:href "View project gallery on Behance"]{View the entire gallery on Behance}
+			◊a[#:href "https://www.behance.net/gallery/51047357/PARAGON-Playing-Cards"]{View the entire gallery on Behance}
 		}
 		
 		◊figure{
