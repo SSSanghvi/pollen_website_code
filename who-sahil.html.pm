@@ -1,7 +1,7 @@
 #lang pollen
 ◊article{
 	◊section{
-		◊h1{§2: Who is Sahil Sanghvi?}
+		◊h1{Who is Sahil Sanghvi?}
 
 		◊figure{
 			◊label[#:for "pic" #:class "margin-toggle"]{}

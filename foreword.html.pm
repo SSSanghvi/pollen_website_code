@@ -2,7 +2,7 @@
 
 ◊article{
 	◊section{
-		◊h1{§1: Foreword}
+		◊h1{Foreword}
 		◊p{This is a web book. About me.}
 		◊p[#:class "all-caps"]{why is your website a book, sahil?}
 		◊p{ 

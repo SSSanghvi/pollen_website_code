@@ -8,4 +8,7 @@
 	◊li{
 		◊a[#:href "everyday-typography.html"]{Everyday Typography}
 	}
+	◊li{
+		◊a[#:href "paragon.html"]{◊span[#:class "all-caps"]{PARAGON} Playing Cards}
+	}
 }
