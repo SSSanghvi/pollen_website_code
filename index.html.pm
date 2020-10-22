@@ -57,5 +57,18 @@
 				}
 			}
 		}
+
+		◊p[#:class "all-caps"]{things i like}
+
+		◊p{
+			◊ol[#:start "12"]{
+				◊li{
+					◊a[#:href "books.html"]{Books I Like}
+				}
+				◊li{
+					◊a[#:href "cards.html"]{Playing Card Collection}
+				}
+			}
+		}
 	}
 }
