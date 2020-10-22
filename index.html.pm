@@ -4,7 +4,6 @@
 ◊article{
 	◊section{
 		◊h1{Sahil Sanghvi}
-		◊p[#:class "danger"]{This website is still a work in progress!}
 		◊p[#:class "all-caps"]{introduction}
 		◊p{ 
 			◊ol{
