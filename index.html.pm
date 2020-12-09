@@ -21,13 +21,18 @@
 		◊p{ 
 			◊ol[#:start "3"]{
 				◊li{
+					◊em[#:style "color: red"]{New! }
+					◊a[#:href "https://storymaps.arcgis.com/stories/de3af8f8bc014f5e8448266ca2cf6450"]{GIS Analysis to Place a New CalFIRE Helicopter Base}
+				}
+				◊li{
 					◊a[#:href "sock.html"]{UC Berkeley S.O.C.K}
 				}
 				◊li{
+					◊em[#:style "color: green"]{Award-winning. }
 					◊a[#:href "styleme.html"]{StyleMe}
 				}
 				◊li{
-					◊a[#:href "food-deserts.html"]{Food Deserts in Los Angeles}
+					◊a[#:href "food-deserts.html"]{GIS Analysis: Food Deserts in Los Angeles}
 				}
 				◊li{
 					◊a[#:href "rsa-tool.html"]{RSA Tool}
@@ -38,7 +43,7 @@
 		◊p[#:class "all-caps"]{creative things i've done}
 		
 		◊p{
-			◊ol[#:start "7"]{
+			◊ol[#:start "8"]{
 				◊li{
 					◊a[#:href "everyday-typography.html"]{Everyday Typography}
 				}
