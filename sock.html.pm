@@ -36,7 +36,7 @@
           	◊p{
           		◊ul{
           			◊li{
-          				Scripted a synchronization service to interface between our internal databases and ◊a[#:href="https://www.saltycloud.com/isora/"]{ISORA} and 
+          				Scripted a synchronization service to interface between our internal databases and ◊a[#:href "https://www.saltycloud.com/isora/"]{ISORA} and 
           				keep organizations, people, and roles up-to-date. This involved logic to maintain things like group ownership, the hierarchical structure of 
           				organizations, etc. 
           			}
