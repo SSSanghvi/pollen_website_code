@@ -43,8 +43,8 @@ a {
 }
 
 a:hover {
-        -moz-box-shadow: 0 0 3px #ccc;
-        -webkit-box-shadow: 0 0 3px #ccc;
-        box-shadow: 0 0 3px #ccc;
+        -moz-box-shadow: 0 0 3px #bbb;
+        -webkit-box-shadow: 0 0 3px #bbb;
+        box-shadow: 0 0 3px #bbb;
         border-radius:5px;
 }

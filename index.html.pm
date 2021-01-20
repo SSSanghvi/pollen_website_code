@@ -19,7 +19,11 @@
 		◊p[#:class "all-caps"]{technical things i've done}
 
 		◊p{ 
-			◊ol[#:start "3"]{
+			◊ol[#:start "3"]{				
+				◊li{
+					◊em[#:style "color: red"]{New! }
+					◊a[#:href "feedme.html"]{FeedMe: Ingredient Prediction}
+				}
 				◊li{
 					◊em[#:style "color: red"]{New! }
 					◊a[#:href "https://storymaps.arcgis.com/stories/de3af8f8bc014f5e8448266ca2cf6450"]{GIS Analysis to Place a New CalFIRE Helicopter Base}
@@ -43,7 +47,7 @@
 		◊p[#:class "all-caps"]{creative things i've done}
 		
 		◊p{
-			◊ol[#:start "8"]{
+			◊ol[#:start "9"]{
 				◊li{
 					◊a[#:href "everyday-typography.html"]{Everyday Typography}
 				}

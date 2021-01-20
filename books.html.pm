@@ -15,8 +15,10 @@
 				}
 			}
 		}
-		
+
+		◊hr{}
 		◊br{}
+
 		◊h2{What I've Already Read (and Like)}
 
 		◊h3{What If? Serious Scientific Answers to Absurd Hypothetical Questions}
@@ -53,6 +55,9 @@
 			science.
 		}
 
+		◊hr{}
+		◊br{}
+
 		◊h3{Practical Typography}
 		◊p{
 			◊span[#:class "all-caps"]{by matthew butterick}
@@ -77,6 +82,9 @@
 		}
 
 		◊p{◊a[#:href "https://practicaltypography.com/"]{It's completely free and online.}}
+
+		◊hr{}
+		◊br{}
 
 		◊h3{How To: Absurd Scientific Advice for Common Real-World Problems}
 		◊p{

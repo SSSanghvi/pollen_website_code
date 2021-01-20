@@ -1,0 +1,83 @@
+<html>
+<head>
+        <meta charset="UTF-8">
+        <title>FeedMe: Ingredient Prediction</title>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+        <link rel="stylesheet" href="tufte.css"/>
+
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async
+              src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+        <root><article><section><h1>FeedMe: Ingredient Prediction</h1>
+
+<p><label class="margin-toggle" for="pic"></label>
+<input class="margin-toggle" id="pic" type="checkbox"/>
+<span class="marginnote"><a href="https://github.com/SSSanghvi/FeedMe">Github Repository</a>
+<br/><br/>
+<a href="https://docs.google.com/presentation/d/1pXJP7W4-DgmvuBR5mqQ0uObxQdbugRapD9Eg16hPKxQ/edit?usp=sharing">Slide Deck</a></span>
+When visiting a mom-and-pop restaurant or other small establishment, dietary restrictions can make ordering food at some restaurants confusing, and perhaps even stressful.
+I've experienced this myself, as a vegetarian. In order to help mitigate this issue, myself and <a href="https://jacquelinezhang.com/">Jacqueline Zhang</a> built a set of neural networks to answer a simple question:</p>
+
+<p>By using a dish’s name and description, which may (but won’t always) contain hints to the ingredients, can we predict if that dish contains ingredients that may violate dietary restrictions?</p>
+
+<h2>Audience</h2>
+
+<p>As I mentioned earlier, I am vegetarian. However, there are many other groups who can also benefit from this tool:</p>
+
+<ul><li>Vegans</li>
+<li>People with food allergies</li>
+<li>Pescatarians</li>
+<li>Even dogs and other pets!<label class="margin-toggle sidenote-number" for="pollen"></label>
+    <input class="margin-toggle" id="pollen" type="checkbox"/>
+    <span class="sidenote">Did you know dogs can't eat grapes?</span></li></ul>
+
+<h2>Data</h2>
+
+<p>Our data came from an organization called PepperridgeAPI. The files were hosted on Kaggle but were later delisted and removed. It contained several high-quality CSV files describing restaurants
+in Boston, MA. From this set, we used three tables describing different dishes, their menu descriptions, and their ingredients.</p>
+
+<figure><img src="img/feedme1.png"/></figure>
+
+<h2>Preprocessing</h2>
+
+<p>While the dataset was already quite clean, we did do some preprocessing. We removed rows with empty data values for necessary fields, and subsampled the data to 20000 records. After that, we removed
+stop words such as <em>the</em>, <em>is</em>, and <em>at</em>. Then, we stemmed the remaining words to reduce the domain of inputs to the model (<em>prepared</em> and <em>preparation</em> both stem to <em>prepar</em>, for example). And finally,
+we created indicator columns for each of the ingredients<label class="margin-toggle sidenote-number" for="pollen"></label>
+        <input class="margin-toggle" id="pollen" type="checkbox"/>
+        <span class="sidenote">The ingredints we are predicting are peanuts, eggs, sesame, fish, shellfish, soy, and meat. This list is a combination of common allergens and other dietary restrictions, and can easily be expanded later on.</span>  we wanted to predict.</p>
+
+<p>To encode the textual data - menu names, menu descriptions, and menu section - into a numerical vector of fixed length, we used a metric called
+<a href="https://en.wikipedia.org/wiki/Tf%E2%80%93idf">Term Frequency, Inverse Document Frequency</a> (tf-idf).</p>
+
+<h2>Prediction and Results</h2>
+
+<p>We tried a variety of approaches to predict the ingredients of the dishes; they are summarized in the
+<a href="https://docs.google.com/presentation/d/1pXJP7W4-DgmvuBR5mqQ0uObxQdbugRapD9Eg16hPKxQ/edit#slide=id.gaf0c0c5761_1_20">Slide Deck</a>.</p>
+
+<p>In the end, a simple set of neural networks proved to be the most effective; one network for each ingredient. Below, we can see validation metrics:</p>
+
+<figure><img src="img/feedme2.png"/></figure>
+
+<h2>Future Improvements</h2>
+<p>This project is meant for quick, simple, everyday use, which is not one of Jupyter Notebook’s strong suits. We’d like to eventually package this up into a smartphone app,
+and distribute it that way for on-the-go use. A potential avenue for improvement if we do so is to use the phone camera to take a picture of the menu
+and run text recognition on it, automatically capturing the needed data.</p></section></article></root>
+        <section>
+                <p class="nav-up">
+                        <a class="nav-prev" style="font-variant: small-caps; letter-spacing: 0.2em;" href="chapter_technical.html">« previous</a>
+
+                        <a style="font-variant: small-caps; letter-spacing: 0.2em;" href="chapter_technical.html">chapter</a> &nbsp | &nbsp
+
+                        <a style="font-variant: small-caps; letter-spacing: 0.2em;" href="index.html">home</a>
+
+                        <a class="nav-next" style="font-variant: small-caps; letter-spacing: 0.2em;" href="calfire.html">next »</a>
+                </p>
+        </section>
+</body>
+</html>

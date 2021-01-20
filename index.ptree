@@ -8,6 +8,7 @@ index.html
 }
 
 ◊chapter_technical.html{
+	feedme.html
 	calfire.html
 	sock.html
 	styleme.html

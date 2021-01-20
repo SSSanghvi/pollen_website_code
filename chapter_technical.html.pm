@@ -6,6 +6,9 @@
 ◊h1{Technical Projects}
 ◊ol[#:start "3"]{
 	◊li{
+		◊a[#:href "feedme.html"]{FeedMe: Ingredient Prediction}
+	}
+	◊li{
 		◊a[#:href "calfire.html"]{GIS Analysis to Place a New CalFIRE Helicopter Base}
 	}
 	◊li{
