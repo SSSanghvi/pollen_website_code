@@ -8,6 +8,7 @@ index.html
 }
 
 ◊chapter_technical.html{
+	cipher_challenge_1.html
 	feedme.html
 	calfire.html
 	sock.html

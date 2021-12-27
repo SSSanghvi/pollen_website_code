@@ -6,6 +6,10 @@
 ◊h1{Technical Projects}
 ◊ol[#:start "3"]{
 	◊li{
+		◊em[#:style "color: red"]{New! }
+		◊a[#:href "cipher_challenge_1.html"]{Solving the Cipher Challenge: Stage 1}
+	}	
+	◊li{
 		◊a[#:href "feedme.html"]{FeedMe: Ingredient Prediction}
 	}
 	◊li{

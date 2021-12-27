@@ -1,0 +1,130 @@
+<html>
+<head>
+        <meta charset="UTF-8">
+        <title>Solving Stage 1 of the Cipher Challenge</title>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+        <link rel="stylesheet" href="tufte.css"/>
+
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async
+              src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+        <root><article><section>        <h1>Solving Stage 1 of the Cipher Challenge</h1>
+<h5><em>December 26, 2021</em></h5>
+        <p>            <span class="small-caps">be warned</span><br/>
+If it wasn't obvious from the title: this page contains spoilers for solving Stage 1 of the Cipher Challenge. The spoilers start soon, so if you want to solve the challenge yourself, close this page now. Good luck!</p>
+
+<h3>Introduction</h3>
+<p>This holday season, I had the free time to start reading a new book. I began reading <em>The Code Book</em> by Simon Singh, and almost immediately was drawn in by the puzzle-like nature of the ciphers being presented.</p>
+<p>To my delight, the end of the book contains a series of ciphers in increasing levels of difficulty. This is my log of how I solved Stage 1: the Monoalphabetic Substitution Chapter.</p>
+
+<p>            <span class="small-caps">the ciphertext:</span><br/>
+<code display="block">BT JPX RMLX PCUV AMLX ICVJP IBTWXVR CI M LMT'R PMTN, MTN YVCJX CDXV MWMBTRJ JPX AMTNGXRJBAH UQCT JPX QGMRJXV CI JPX YMGG CI JPX HBTW'R QMGMAX;  MTN JPX HBTW RMY JPX QMVJ CI JPX PMTN JPMJ YVCJX. JPXT JPX HBTW'R ACUTJXTMTAX YMR APMTWXN, MTN PBR JPCUWPJR JVCUFGXN PBL, RC JPMJ JPX SCBTJR CI  PBR GCBTR YXVX GCCRXN, MTN PBR HTXXR RLCJX CTX MWMBTRJ MTCJPXV. JPX HBTW AVBXN MGCUN JC FVBTW BT JPX MRJVCGCWXVR, JPX APMGNXMTR, MTN JPX RCCJPRMEXVR.  MTN JPX HBTW RQMHX, MTN RMBN JC JPX YBRX LXT CI FMFEGCT, YPCRCXDXV RPMGG VXMN JPBR YVBJBTW, MTN RPCY LX JPX BTJXVQVXJMJBCT JPXVXCI, RPMGG FX AGCJPXN YBJP RAMVGXJ, MTN PMDX M APMBT CI WCGN MFCUJ PBR TXAH, MTN RPMGG FX JPX JPBVN VUGXV BT JPX HBTWNCL. JPXT AMLX BT MGG JPX HBTW'R YBRX LXT; FUJ JPXE  ACUGN TCJ VXMN JPX YVBJBTW, TCV LMHX HTCYT JC JPX HBTW JPX BTJXVQVXJMJBCT JPXVXCI. JPXT YMR HBTW FXGRPMOOMV WVXMJGE JVCUFGXN, MTN PBR ACUTJXTMTAX  YMR APMTWXN BT PBL, MTN PBR GCVNR YXVX MRJCTBRPXN. TCY JPX KUXXT, FE VXMRCT CI JPX YCVNR CI JPX HBTW MTN PBR GCVNR, AMLX BTJC JPX FMTKUXJ PCURX; MTN  JPX KUXXT RQMHX MTN RMBN, C HBTW, GBDX ICVXDXV; GXJ TCJ JPE JPCUWPJR JVCUFGX JPXX, TCV GXJ JPE ACUTJXTMTAX FX APMTWXN; JPXVX BR M LMT BT JPE HBTWNCL,  BT YPCL BR JPX RQBVBJ CI JPX PCGE WCNR; MTN BT JPX LAMER CI JPE IMJPXV GBWPJ MTN UTNXVRJMTNBTW MTN YBRNCL, GBHX JPX YBRNCL CI JPX WCNR, YMR ICUTN BT  PBL; YPCL JPX HBTW TXFUAPMNTXOOMV JPE IMJPXV, JPX HBTW, B RME, JPE IMJPXV, LMNX LMRJXV CI JPX LMWBABMTR, MRJVCGCWXVR, APMGNXMTR, MTN RCCJPRMEXVR;  ICVMRLUAP MR MT XZAXGGXTJ RQBVBJ, MTN HTCYGXNWX, MTN UTNXVRJMTNBTW, BTJXVQVXJBTW CI NVXMLR, MTN RPCYBTW CI PMVN RXTJXTAXR, MTN NBRRCGDBTW CI NCUFJR,  YXVX ICUTN BT JPX RMLX NMTBXG, YPCL JPX HBTW TMLXN FXGJXRPMOOMV; TCY GXJ NMTBXG FX AMGGXN, MTN PX YBGG RPCY JPX BTJXVQVXJMJBCT. JPX IBVRJ ACNXYCVN BR CJPXGGC.</code>
+</p>
+
+<h3>Exploring the Data</h3>
+
+<p><span class="small-caps">notation</span><br/>
+Throughout this writeup I will use the subscript \(C\) to denote a letter or string in ciphertext, and the subscript \(P\) to denote a letter or string in plaintext. For example, the letter "H" in ciphertext will be noted as \(H_C\).
+<hr/></p>
+
+<p>As I read in the beginning of the book, and as I learned studying Data Science, it's always good to start with some exploratory data analysis. While it wasn't specified anywhere, I (correctly) assumed that the language of the original message was English. For a sample of English plaintext, I used this <a href="https://lite.cnn.com/en/article/h_7dde3051bca2542215494f9fd77c8030">CNN article</a>.</p>
+
+<p>After doing some simple preprocessing in Python<label class="margin-toggle sidenote-number" for="code_link"></label>
+                    <input class="margin-toggle" id="code_link" type="checkbox"/>
+                    <span class="sidenote">If you'd like to see the code behind this writeup, you can find it <a href="https://github.com/SSSanghvi/cipher_challenge/blob/main/stage1.ipynb">on my Github Profile</a>.</span>, I first plotted the frequencies of individual letters in both texts:</p>
+
+<figure><img src="img/cc_s1/plaintext_single_frequencies.png"/></figure>
+<figure><img src="img/cc_s1/ciphertext_single_frequencies.png"/></figure>
+
+<p>It immediately jumps out that \(E_P\) and \(X_C\) have very similar frequencies. Beyond that, it's difficult to make strong guesses. However, we know that the english language only contains two single-letter words: a and I. Let's try plotting the counts of all single-letter words in both texts:</p>
+
+<figure><img src="img/cc_s1/plaintext_single_word_counts.png"/></figure>
+<figure><img src="img/cc_s1/ciphertext_single_word_counts.png"/></figure>
+
+<p>Not much strong information here. Even though \(M_C\) appears the most, at 3 occurences it could just be a conincidence that the encrypted message has more of one one-letter word than the other. Plus, there's the wierd fact that there are 3 unique single-letter words in the ciphertext. Let's put that aside and look at 2 letter words:</p>
+
+<figure><img src="img/cc_s1/plaintext_2letter_counts.png"/></figure>
+<figure><img src="img/cc_s1/ciphertext_2letter_counts.png"/></figure>
+
+<p>As illustrated in the first plot, "to" is indeed the most common 2-letter word in English. Examining the second bar plot, it seems feasible that \(CI_C\) = \(TO_P\) and \(BT_C\) = \(OF_P\). Let's mark those down as guesses for later. Lastly, let's look at 3-letter words. Anything beyond that won't be so helpful.</p>
+
+<figure><img src="img/cc_s1/plaintext_3letter_counts.png"/></figure>
+<figure><img src="img/cc_s1/ciphertext_3letter_counts.png"/></figure>
+
+<p>We see our clearest signal yet - \(JPX_C\) and \(THE_P\) seem to be highly related. This matches with our previous observation about \(X_C\) = \(E_P\), but not the guess that \(CI_C\) = \(TO_P\). I have more confidence in the former, so let's start with the following set of substitutions:
+$${J_C=T_P, P_C=H_P, X_C=E_P}$$</p>
+
+<h3>Codebreaking</h3>
+<p>What follows from this point is essentially a repeating process of (1) making a guess for one or more substitutions by looking at the partially-decoded ciphertext, and (2) plugging this substitution in to get a new partially-decoded ciphertext.</p>
+
+<p>Plugging in our three initial substitutions from above, we get the following output. Note that "decoded" plaintext letters are lowercase, while the original ciphertext letters are uppercase.</p>
+
+<p><code>BT the RMLe hCUV AMLe ICVth IBTWeVR CI M LMT'R hMTN, MTN YVCte CDeV MWMBTRt the AMTNGeRtBAH UQCT the QGMRteV CI the YMGG CI the HBTW'R QMGMAe;  MTN the HBTW RMY the QMVt CI the hMTN thMt YVCte. theT the HBTW'R ACUTteTMTAe YMR AhMTWeN, MTN hBR thCUWhtR tVCUFGeN hBL, RC thMt the SCBTtR CI  hBR GCBTR YeVe GCCReN, MTN hBR HTeeR RLCte CTe MWMBTRt MTCtheV. the HBTW AVBeN MGCUN tC FVBTW BT the MRtVCGCWeVR, the AhMGNeMTR, MTN the RCCthRMEeVR.  MTN the HBTW RQMHe, MTN RMBN tC the YBRe LeT CI FMFEGCT, YhCRCeDeV RhMGG VeMN thBR YVBtBTW, MTN RhCY Le the BTteVQVetMtBCT theVeCI, RhMGG Fe AGCtheN YBth RAMVGet, MTN hMDe M AhMBT CI WCGN MFCUt hBR TeAH, MTN RhMGG Fe the thBVN VUGeV BT the HBTWNCL. theT AMLe BT MGG the HBTW'R YBRe LeT; FUt theE  ACUGN TCt VeMN the YVBtBTW, TCV LMHe HTCYT tC the HBTW the BTteVQVetMtBCT theVeCI. theT YMR HBTW FeGRhMOOMV WVeMtGE tVCUFGeN, MTN hBR ACUTteTMTAe  YMR AhMTWeN BT hBL, MTN hBR GCVNR YeVe MRtCTBRheN. TCY the KUeeT, FE VeMRCT CI the YCVNR CI the HBTW MTN hBR GCVNR, AMLe BTtC the FMTKUet hCURe; MTN  the KUeeT RQMHe MTN RMBN, C HBTW, GBDe ICVeDeV; Get TCt thE thCUWhtR tVCUFGe thee, TCV Get thE ACUTteTMTAe Fe AhMTWeN; theVe BR M LMT BT thE HBTWNCL,  BT YhCL BR the RQBVBt CI the hCGE WCNR; MTN BT the LAMER CI thE IMtheV GBWht MTN UTNeVRtMTNBTW MTN YBRNCL, GBHe the YBRNCL CI the WCNR, YMR ICUTN BT  hBL; YhCL the HBTW TeFUAhMNTeOOMV thE IMtheV, the HBTW, B RME, thE IMtheV, LMNe LMRteV CI the LMWBABMTR, MRtVCGCWeVR, AhMGNeMTR, MTN RCCthRMEeVR;  ICVMRLUAh MR MT eZAeGGeTt RQBVBt, MTN HTCYGeNWe, MTN UTNeVRtMTNBTW, BTteVQVetBTW CI NVeMLR, MTN RhCYBTW CI hMVN ReTteTAeR, MTN NBRRCGDBTW CI NCUFtR,  YeVe ICUTN BT the RMLe NMTBeG, YhCL the HBTW TMLeN FeGteRhMOOMV; TCY Get NMTBeG Fe AMGGeN, MTN he YBGG RhCY the BTteVQVetMtBCT. the IBVRt ACNeYCVN BR CtheGGC.</code></p>
+
+<p>Not very useful yet. Let's also guess that \(MTN_C = AND_P\). It seems reasonable based on the distinctive relative count to the other words:</p>
+
+<p><code>Bn the RaLe hCUV AaLe ICVth IBnWeVR CI a Lan'R hand, and YVCte CDeV aWaBnRt the AandGeRtBAH UQCn the QGaRteV CI the YaGG CI the HBnW'R QaGaAe;  and the HBnW RaY the QaVt CI the hand that YVCte. then the HBnW'R ACUntenanAe YaR AhanWed, and hBR thCUWhtR tVCUFGed hBL, RC that the SCBntR CI  hBR GCBnR YeVe GCCRed, and hBR HneeR RLCte Cne aWaBnRt anCtheV. the HBnW AVBed aGCUd tC FVBnW Bn the aRtVCGCWeVR, the AhaGdeanR, and the RCCthRaEeVR.  and the HBnW RQaHe, and RaBd tC the YBRe Len CI FaFEGCn, YhCRCeDeV RhaGG Vead thBR YVBtBnW, and RhCY Le the BnteVQVetatBCn theVeCI, RhaGG Fe AGCthed YBth RAaVGet, and haDe a AhaBn CI WCGd aFCUt hBR neAH, and RhaGG Fe the thBVd VUGeV Bn the HBnWdCL. then AaLe Bn aGG the HBnW'R YBRe Len; FUt theE  ACUGd nCt Vead the YVBtBnW, nCV LaHe HnCYn tC the HBnW the BnteVQVetatBCn theVeCI. then YaR HBnW FeGRhaOOaV WVeatGE tVCUFGed, and hBR ACUntenanAe  YaR AhanWed Bn hBL, and hBR GCVdR YeVe aRtCnBRhed. nCY the KUeen, FE VeaRCn CI the YCVdR CI the HBnW and hBR GCVdR, AaLe BntC the FanKUet hCURe; and  the KUeen RQaHe and RaBd, C HBnW, GBDe ICVeDeV; Get nCt thE thCUWhtR tVCUFGe thee, nCV Get thE ACUntenanAe Fe AhanWed; theVe BR a Lan Bn thE HBnWdCL,  Bn YhCL BR the RQBVBt CI the hCGE WCdR; and Bn the LAaER CI thE IatheV GBWht and UndeVRtandBnW and YBRdCL, GBHe the YBRdCL CI the WCdR, YaR ICUnd Bn  hBL; YhCL the HBnW neFUAhadneOOaV thE IatheV, the HBnW, B RaE, thE IatheV, Lade LaRteV CI the LaWBABanR, aRtVCGCWeVR, AhaGdeanR, and RCCthRaEeVR;  ICVaRLUAh aR an eZAeGGent RQBVBt, and HnCYGedWe, and UndeVRtandBnW, BnteVQVetBnW CI dVeaLR, and RhCYBnW CI haVd RentenAeR, and dBRRCGDBnW CI dCUFtR,  YeVe ICUnd Bn the RaLe danBeG, YhCL the HBnW naLed FeGteRhaOOaV; nCY Get danBeG Fe AaGGed, and he YBGG RhCY the BnteVQVetatBCn. the IBVRt ACdeYCVd BR CtheGGC.</code></p>
+
+<p>I won't bore you with each and every guess to a substitution - if you would like to see them all, please take a look at the code on GitHub<label class="margin-toggle sidenote-number" for="code_link_2"></label>
+                    <input class="margin-toggle" id="code_link_2" type="checkbox"/>
+                    <span class="sidenote">If you'd like to see the code behind this writeup, you can find it <a href="https://github.com/SSSanghvi/cipher_challenge/blob/main/stage1.ipynb">on my Github Profile</a>.</span>.</p>
+
+<p>Eventually, I was able to find all 26 substitutions and complete the challenge. The key is below - this is your final chance to close the page if you'd like to try the challenge yourself!
+</p>
+
+<p><code>{'M': 'a',
+    'F': 'b',
+    'A': 'c',
+    'N': 'd',
+    'X': 'e',
+    'I': 'f',
+    'W': 'g',
+    'P': 'h',
+    'B': 'i',
+    'H': 'k',
+    'G': 'l',
+    'L': 'm',
+    'T': 'n',
+    'C': 'o',
+    'Q': 'p',
+    'K': 'q',
+    'V': 'r',
+    'R': 's',
+    'J': 't',
+    'U': 'u',
+    'D': 'v',
+    'Y': 'w',
+    'Z': 'x',
+    'E': 'y',
+    'O': 'z'}</code></p>
+
+<p>And the decoded message is (drumroll, please!):</p>
+
+<p><code>"in the same hour came forth fingers of a man's hand, and wrote over against the candlestick upon the plaster of the wall of the king's palace;  and the king saw the part of the hand that wrote. then the king's countenance was changed, and his thoughts troubled him, so that the joints of  his loins were loosed, and his knees smote one against another. the king cried aloud to bring in the astrologers, the chaldeans, and the soothsayers.  and the king spake, and said to the wise men of babylon, whosoever shall read this writing, and show me the interpretation thereof, shall be clothed with scarlet, and have a chain of gold about his neck, and shall be the third ruler in the kingdom. then came in all the king's wise men; but they  could not read the writing, nor make known to the king the interpretation thereof. then was king belshazzar greatly troubled, and his countenance  was changed in him, and his lords were astonished. now the queen, by reason of the words of the king and his lords, came into the banquet house; and  the queen spake and said, o king, live forever; let not thy thoughts trouble thee, nor let thy countenance be changed; there is a man in thy kingdom,  in whom is the spirit of the holy gods; and in the mcays of thy father light and understanding and wisdom, like the wisdom of the gods, was found in  him; whom the king nebuchadnezzar thy father, the king, i say, thy father, made master of the magicians, astrologers, chaldeans, and soothsayers;  forasmuch as an excellent spirit, and knowledge, and understanding, interpreting of dreams, and showing of hard sentences, and dissolving of doubts,  were found in the same daniel, whom the king named belteshazzar; now let daniel be called, and he will show the interpretation. the first codeword is othello. "</code></p>
+
+<p>The last sentence stands out from the rest of the text: <em>the first codeword is othello</em>. Hmm... perhaps a clue to a later stage of the challenge?</p>
+
+<p>In closing - this was a very enjoyable and educational activity, and I certainly plan to continue working on the rest of the challenge in the future. Check back for more posts soon!</p>
+
+<hr/>
+<h3>Acknowledgement</h3>
+<p>Please note that the Cipher Challenge and the ciphertext that was decoded were both authored by Simon Singh. I make no claims of ownership over his intellectual property.</p></section></article> </root>
+        <section>
+                <p class="nav-up">
+                        <a class="nav-prev" style="font-variant: small-caps; letter-spacing: 0.2em;" href="chapter_technical.html">« previous</a>
+
+                        <a style="font-variant: small-caps; letter-spacing: 0.2em;" href="chapter_technical.html">chapter</a> &nbsp | &nbsp
+
+                        <a style="font-variant: small-caps; letter-spacing: 0.2em;" href="index.html">home</a>
+
+                        <a class="nav-next" style="font-variant: small-caps; letter-spacing: 0.2em;" href="feedme.html">next »</a>
+                </p>
+        </section>
+</body>
+</html>

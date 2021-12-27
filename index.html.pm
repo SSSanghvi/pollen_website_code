@@ -19,14 +19,16 @@
 		◊p[#:class "all-caps"]{technical things i've done}
 
 		◊p{ 
-			◊ol[#:start "3"]{				
+			◊ol[#:start "3"]{
 				◊li{
 					◊em[#:style "color: red"]{New! }
+					◊a[#:href "cipher_challenge_1.html"]{Solving the Cipher Challenge: Stage 1}
+				}
+				◊li{
 					◊a[#:href "feedme.html"]{FeedMe: Ingredient Prediction}
 				}
 				◊li{
-					◊em[#:style "color: red"]{New! }
-					◊a[#:href "https://storymaps.arcgis.com/stories/de3af8f8bc014f5e8448266ca2cf6450"]{GIS Analysis to Place a New CalFIRE Helicopter Base}
+					◊a[#:href "https://storymaps.arcgis.com/stories/de3af8f8bc014f5e8448266ca2cf6450"]{GIS Analysis to Place a New CalFIRE Helicopter Base (External link to arcgis.com)}
 				}
 				◊li{
 					◊a[#:href "sock.html"]{UC Berkeley S.O.C.K}
@@ -47,7 +49,7 @@
 		◊p[#:class "all-caps"]{creative things i've done}
 		
 		◊p{
-			◊ol[#:start "9"]{
+			◊ol[#:start "10"]{
 				◊li{
 					◊a[#:href "everyday-typography.html"]{Everyday Typography}
 				}
@@ -69,7 +71,7 @@
 		◊p[#:class "all-caps"]{things i like}
 
 		◊p{
-			◊ol[#:start "12"]{
+			◊ol[#:start "15"]{
 				◊li{
 					◊a[#:href "books.html"]{Books I Like}
 				}
